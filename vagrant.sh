@@ -9,7 +9,6 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 sudo update-alternatives --set java /usr/lib/jvm/java-7-oracle/bin/java
 
 java -version
-exit 1
 
 if ( ! mount | grep -q \/data ) ; then
    sudo mount /dev/sdb1 /data
@@ -20,7 +19,12 @@ fi
 
 echo zimbra foss monolith tree \(8.7.1\)
 
-cd /data/zimbra-foss
-cd ZimbraBuild
 
+cd /data/build
+[ -d my-zimbra ] || git clone https://github.com/hernad/my-zimbra.git
+cd my-zimbra
+git checkout -f
+git pull
+
+cd ZimbraBuild
 ./buildZCS.sh
