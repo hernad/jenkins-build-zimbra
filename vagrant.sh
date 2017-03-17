@@ -6,9 +6,10 @@ echo zimbra 8.7.1 - jdk7 is mandatory
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
-
 sudo update-alternatives --set java /usr/lib/jvm/java-7-oracle/bin/java
 
+java -version
+exit 1
 
 if ( ! mount | grep -q \/data ) ; then
    sudo mount /dev/sdb1 /data
