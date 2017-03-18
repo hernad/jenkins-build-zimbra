@@ -35,3 +35,6 @@ git pull
 
 cd ZimbraBuild
 ./buildZCS.sh
+
+cp amd64/zcs-8.7.1_GA_1671.UBUNTU16_64.*.tgz /vagrant/zcs.tar.gz
+
