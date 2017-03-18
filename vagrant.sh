@@ -33,6 +33,8 @@ sudo chown vagrant -R .git
 git checkout -f
 git pull
 
+./my-patches.sh
+
 cd ZimbraBuild
 ./buildZCS.sh
 
