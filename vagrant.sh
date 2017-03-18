@@ -30,6 +30,7 @@ cd /data/build
 cd my-zimbra
 sudo rm -rf *
 sudo chown vagrant -R .git
+git fetch
 git checkout -f bs_BA
 git pull
 
