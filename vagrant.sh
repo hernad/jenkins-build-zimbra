@@ -30,7 +30,7 @@ cd /data/build
 cd my-zimbra
 sudo rm -rf *
 sudo chown vagrant -R .git
-git checkout -f
+git checkout -f bs_BA
 git pull
 
 ./my-patches.sh
