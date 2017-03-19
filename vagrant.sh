@@ -34,7 +34,8 @@ git stash --include-untracked
 git fetch --all
 git clean -fdx
 git reset --hard origin/bs_BA
-git pull origin/bs_BA
+git checkout bs_BA
+git pull
 
 ./my-patches.sh
 
