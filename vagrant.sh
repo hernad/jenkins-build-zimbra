@@ -27,12 +27,14 @@ cd /data/build
 
 [ -d my-zimbra ] || exit 1
 
+sudo chown vagrant -R my-zimbra
 cd my-zimbra
-sudo rm -rf *
-sudo chown vagrant -R .git
-git fetch
-git checkout -f bs_BA
-git pull
+
+git stash --include-untracked
+git fetch --all
+git clean -fdx
+git reset --hard origin/bs_BA
+git pull origin/bs_BA
 
 ./my-patches.sh
 
