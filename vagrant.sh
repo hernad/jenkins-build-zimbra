@@ -32,7 +32,7 @@ cd my-zimbra
 
 git stash --include-untracked
 git fetch --all
-git clean -fdx
+#git clean -fdx
 git reset --hard origin/bs_BA
 git checkout bs_BA
 git pull
