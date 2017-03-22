@@ -17,9 +17,9 @@ Vagrant.configure("2") do |config|
   config.persistent_storage.mountpoint = '/data'
   config.vm.box_check_update = false
 
-  config.vm.provision "shell", inline: <<-SHELL
-     chmod +x /vagrant/vagrant.sh
-     /vagrant/vagrant.sh
-
-  SHELL
+  # NO! this is already in ubuntu-16.04-dev Vagrant.template, so it would be ran 2x"
+  #config.vm.provision "shell", inline: <<-SHELL
+  #   chmod +x /vagrant/vagrant.sh
+  #   /vagrant/vagrant.sh
+  #SHELL
 end
