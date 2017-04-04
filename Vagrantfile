@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu-16.04-dev"
 
   config.persistent_storage.enabled = true
-  config.persistent_storage.location = "data_zimbra_dev.vdi"
+  config.persistent_storage.location = "data_zimbra-build.vdi"
   config.vm.box_check_update = false
 
   # NO! this is already in ubuntu-16.04-dev Vagrant.template, so it would be ran 2x"
