@@ -13,7 +13,7 @@ fi
 
 
 [ -d /data/build ] || sudo mkdir -p /data/build
-sudo chown zimbra /data/build 
+sudo chown vagrant /data/build 
 
 cd /data/build
 mkdir installer-build
