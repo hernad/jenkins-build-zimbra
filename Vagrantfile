@@ -22,4 +22,5 @@ Vagrant.configure("2") do |config|
   #   chmod +x /vagrant/vagrant.sh
   #   /vagrant/vagrant.sh
   #SHELL
+
 end

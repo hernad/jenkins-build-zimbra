@@ -1,16 +1,8 @@
 #!/bin/bash
 
-echo "hello vagrant world"
 
-echo zimbra 8.7.1 - jdk7 is mandatory
-
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-
-#sudo update-alternatives --set java /usr/lib/jvm/java-7-oracle/bin/java
-
-export PATH=/usr/lib/jvm/java-7-oracle/bin:$PATH
-
-java -version
+sudo apt-get update -y
+sudo apt-get install software-properties-common openjdk-8-jdk ant ruby git maven build-essential -y
 
 if ( ! mount | grep -q \/data ) ; then
    sudo mount /dev/sdb1 /data
@@ -19,28 +11,38 @@ else
 fi
 
 
-echo zimbra foss monolith tree \(8.7.1\)
-
-
 cd /data/build
-[ -d my-zimbra ] || git clone https://github.com/hernad/my-zimbra.git
 
-[ -d my-zimbra ] || exit 1
 
-sudo chown vagrant -R my-zimbra
-cd my-zimbra
+mkdir installer-build
 
-git stash --include-untracked
-git fetch --all
-#git clean -fdx
-git reset --hard origin/bs_BA
-git checkout bs_BA
+rm -rf BUILDS/UBUNTU16_64
+
+cd installer-build
+[ -d zm-build ] || git clone https://github.com/Zimbra/zm-build.git
+[ -d zm-build ] || exit 1
+sudo chown vagrant -R zm-build
+
+cd zm-build
+git checkout develop -f
 git pull
 
-./my-patches.sh
 
-cd ZimbraBuild
-./buildZCS.sh
+#git stash --include-untracked
+#git fetch --all
+#git reset --hard origin/bs_BA
+#git checkout bs_BA
+#git pull
 
-cp amd64/zcs-8.7.1_GA_*.UBUNTU16_64.*.tgz /vagrant/zcs.tar.gz
+
+./build.pl --build-no=1713 --build-ts=`date +'%Y%m%d%H%M%S'` \
+  --build-release=JUDASPRIEST --build-release-no=8.7.6 \
+  --build-release-candidate=GA --build-type=FOSS \
+  --build-thirdparty-server=files.zimbra.com --no-interactive
+
+
+cd ..
+
+cp -av BUILDS/UBUNTU16_64/JUDASPRIEST-876/*_FOSS/zm-build/zcs-8.7.6_1713.UBUNTU16_64.*.tgz /vagrant/zcs-zm.tar.gz
+
 
