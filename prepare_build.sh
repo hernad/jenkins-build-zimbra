@@ -2,9 +2,9 @@
 
 
 if [ ! -f data_zimbra_dev.vdi ] ;  then
-  /opt/VirtualBox/VBoxManage clonemedium ~/data_zimbra_dev.vdi data_zimbra_dev.vdi
+  /opt/VirtualBox/VBoxManage clonemedium ~/base_data_zimbra-build.vdi data_zimbra-build.vdi
 else
-	echo "data_zimbra_dev.vdi already exists"
+	echo "data_zimbra-build.vdi already exists"
 fi
 
 
