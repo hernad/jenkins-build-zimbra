@@ -11,14 +11,16 @@ else
 fi
 
 
+
+[ -d /data/build ] || sudo mkdir -p /data/build
+sudo chown zimbra /data/build 
+
 cd /data/build
-
-
 mkdir installer-build
+cd installer-build
 
 rm -rf BUILDS/UBUNTU16_64
 
-cd installer-build
 [ -d zm-build ] || git clone https://github.com/Zimbra/zm-build.git
 [ -d zm-build ] || exit 1
 sudo chown vagrant -R zm-build
