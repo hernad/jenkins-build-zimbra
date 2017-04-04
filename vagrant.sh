@@ -23,7 +23,7 @@ fi
 echo zimbra foss monolith tree \(8.7.1\)
 
 [ -d /data/build ] || sudo mkdir -p /data/build
-sudo chown zimbra /data/build 
+sudo chown vagrant /data/build 
 
 cd /data/build
 [ -d my-zimbra ] || git clone https://github.com/hernad/my-zimbra.git
