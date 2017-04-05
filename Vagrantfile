@@ -13,10 +13,15 @@ Vagrant.configure("2") do |config|
   config.persistent_storage.location = "data_zimbra-build-2.vdi"
   config.vm.box_check_update = false
 
-  # NO! this is already in ubuntu-16.04-dev Vagrant.template, so it would be ran 2x"
-  #config.vm.provision "shell", inline: <<-SHELL
-  #   chmod +x /vagrant/vagrant.sh
-  #   /vagrant/vagrant.sh
-  #SHELL
+  config.vm.provider "virtualbox" do |vb|
+     vb.memory = "2048"
+     vb.gui = false
+     #vb.customize ["modifyvm", :id, "--vrde", "on" ]
+     #vb.customize ["modifyvm", :id, "--vrdeport", "33897" ]
+     #vb.customize ["modifyvm", :id, "--clipboard", "bidirectional" ]
+  end
+
+  config.vm.provision "shell", inline: '/vagrant/vagrant.sh'
+
 
 end
