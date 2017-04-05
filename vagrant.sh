@@ -45,6 +45,6 @@ git pull
 
 cd ..
 
-cp -av BUILDS/UBUNTU16_64/JUDASPRIEST-876/*_FOSS/zm-build/zcs-8.7.6_1713.UBUNTU16_64.*.tgz /vagrant/zcs-zm.tar.gz
+cp -av /data/build/installer-build/BUILDS/UBUNTU16_64/JUDASPRIEST-*/*_FOSS/zm-build/zcs-*.tgz /vagrant/zcs-zm.tar.gz
 
 
