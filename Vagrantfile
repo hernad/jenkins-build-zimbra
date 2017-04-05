@@ -7,8 +7,8 @@
 # you're doing.
 Vagrant.configure("2") do |config|
   
-	
   config.vm.box = "ubuntu-16.04-dev"
+  #config.vm.box = "ubuntu-16.04-dev-zimbra"
 
   config.persistent_storage.enabled = true
   config.persistent_storage.location = "data_zimbra-build.vdi"
