@@ -1,10 +1,11 @@
 #!/bin/bash
 
-
-if [ ! -f data_zimbra_dev.vdi ] ;  then
-  /opt/VirtualBox/VBoxManage clonemedium ~/base_data_zimbra-build-2.vdi data_zimbra-build-2.vdi
+VDI=data_zimbra-build-2.vdi
+ 
+if [ ! -f ] ;  then
+  /opt/VirtualBox/VBoxManage clonemedium ~/base_data_zimbra-build-2.vdi $VDI
 else
-	echo "data_zimbra-build-2.vdi already exists"
+	echo "$VDI already exists"
 fi
 
 
