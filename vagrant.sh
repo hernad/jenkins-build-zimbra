@@ -1,5 +1,8 @@
 #!/bin/bash
 
+BUILD_NO=1787
+BUILD_RELEASE=8.7.7
+
 
 sudo apt-get update -y
 sudo apt-get install software-properties-common openjdk-8-jdk ant ruby git maven build-essential -y
@@ -37,8 +40,8 @@ git pull
 #git pull
 
 
-./build.pl --build-no=1713 --build-ts=`date +'%Y%m%d%H%M%S'` \
-  --build-release=JUDASPRIEST --build-release-no=8.7.6 \
+./build.pl --build-no=$BUILD_NO --build-ts=`date +'%Y%m%d%H%M%S'` \
+  --build-release=JUDASPRIEST --build-release-no=$BUILD_RELEASE \
   --build-release-candidate=GA --build-type=FOSS \
   --build-thirdparty-server=files.zimbra.com --no-interactive
 
