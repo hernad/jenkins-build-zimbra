@@ -48,6 +48,11 @@ git pull
 
 cd ..
 
-cp -av /data/build/installer-build/BUILDS/UBUNTU16_64/JUDASPRIEST-*/*_FOSS/zm-build/zcs-*.tgz /vagrant/zcs-zm.tar.gz
-
 echo $BUILD_RELEASE > /vagrant/ZIMBRA_VER
+TAR=/vagrant/zcs-zm-${BUILD_RELEASE}.tar.gz
+
+[ -f $TAR ] && rm $TAR
+
+cp -av /data/build/installer-build/BUILDS/UBUNTU16_64/JUDASPRIEST-*/*_FOSS/zm-build/zcs-*.tgz $TAR
+
+
