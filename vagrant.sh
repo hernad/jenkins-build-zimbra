@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BUILD_NO=1787
-BUILD_RELEASE=8.7.7
+BUILD_NO=1900
+BUILD_RELEASE=8.7.9
 
 
 sudo apt-get update -y
@@ -50,4 +50,4 @@ cd ..
 
 cp -av /data/build/installer-build/BUILDS/UBUNTU16_64/JUDASPRIEST-*/*_FOSS/zm-build/zcs-*.tgz /vagrant/zcs-zm.tar.gz
 
-
+echo $BUILD_RELEASE > /vagrant/ZIMBRA_VER
