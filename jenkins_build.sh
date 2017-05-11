@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/bin:/usr/sbin
+export PATH=$PATH:/opt/vagrant/bin:/opt/VirtualBox/bin
+export PATH=$PATH:/opt/java/bin
+export PATH=$PATH:/opt/green/bin
 
 ./prepare_build.sh
 
