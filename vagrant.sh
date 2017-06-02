@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BUILD_NO=1794
-BUILD_RELEASE=8.7.9
+BUILD_NO=1900
+BUILD_RELEASE=8.7.10
 
 
 sudo apt-get update -y
